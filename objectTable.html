@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Showing Object Data in Lightning Datatable">
+        <lightning-input name="object" label="Enter the Object Name" value={objectName}  onchange={handleChange}></lightning-input>
+        <lightning-input name="field" label="Enter the Field Name" value={fieldName}  onchange={handleFieldChange}></lightning-input>
+        <lightning-button label="Search" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        <p>adding {main} fieldnames to datatable. Please Enter 5 fieldnames</p>
+    </lightning-card>
+    <template if:true={changeComp}>
+        <c-assignment-child-component object-name={objectName} main-string={main}></c-assignment-child-component>
+    </template>
+</template>

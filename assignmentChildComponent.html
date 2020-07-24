@@ -1,0 +1,22 @@
+<template>
+    {objectName}
+    {mainString}
+    <lightning-card title="Showing Account Object Data in Lightning Datatable">
+        <template if:true={showTable}>
+            <c-pagination records={opps} 
+                        total-records={opps.length} 
+                        show-search-box="true" 
+                        onpaginatorchange={handlePaginatorChange}>
+            </c-pagination>
+        <lightning-datatable columns={columns} 
+        data={recordsToDisplay} 
+                            key-field="id"
+                            hide-checkbox-column="true"
+                            show-row-number-column="true"
+                            row-number-offset={rowNumberOffset}
+                            onrowaction={handleRowAction}
+                            onsave={handleSave}
+                            draft-values={draftValues}   ></lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
